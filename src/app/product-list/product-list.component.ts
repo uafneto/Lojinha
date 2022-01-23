@@ -1,3 +1,4 @@
+import { SnackbarService } from './../services/snackbar.service';
 import { Component } from '@angular/core';
 
 import { products } from '../products';
@@ -10,7 +11,10 @@ import { products } from '../products';
 export class ProductListComponent {
   products = products;
 
+  constructor(private snackbar: SnackbarService){}
+
   share() {
+    this.snackbar.open('O produto foi compartilhado');
     window.alert('O produto foi compartilhado');
   }
 
